@@ -4,8 +4,10 @@ task helloWorld {
   }
 }
 
+// configuration phase
 task byeWorld {
   doLast {
+    // execution phase
     println "Bye World"
   }
 }
