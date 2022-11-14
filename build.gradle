@@ -3,3 +3,9 @@ task helloWorld {
     println "Hello World"
   }
 }
+
+task byeWorld {
+  doLast {
+    println "Bye World"
+  }
+}
