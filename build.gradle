@@ -16,3 +16,9 @@ task copyDocs(type: Copy) {
   include "**/*md"
   includeEmptyDirs = false
 }
+
+task createZip(type: Zip) {
+  from "build/docs"
+  archiveFileName = "docs.zip"
+  destinationDirectory = file("build/dist")
+}
