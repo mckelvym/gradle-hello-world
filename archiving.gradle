@@ -1,3 +1,5 @@
+apply plugin: "base"
+
 task copyDocs(type: Copy) {
   from "src"
   into "build/docs"
@@ -7,7 +9,8 @@ task copyDocs(type: Copy) {
 
 task createZip(type: Zip) {
   from "build/docs"
-  archiveFileName = "docs.zip"
-  destinationDirectory = file("build/dist")
+  //provided by base plugin:
+  //archiveFileName = "docs.zip"
+  //destinationDirectory = file("build/dist")
   dependsOn copyDocs
 }
