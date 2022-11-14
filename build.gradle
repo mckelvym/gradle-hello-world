@@ -9,3 +9,10 @@ task byeWorld {
     println "Bye World"
   }
 }
+
+task copyDocs(type: Copy) {
+  from "src"
+  into "build/docs"
+  include "**/*md"
+  includeEmptyDirs = false
+}
