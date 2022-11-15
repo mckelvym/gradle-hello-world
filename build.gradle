@@ -12,4 +12,9 @@ task byeWorld {
   }
 }
 
+dependencies {
+  //implementation project(':module1')
+  implementation 'commons-cli:commons-cli:1.5.0'
+}
+
 apply from: "archiving.gradle"
