@@ -64,6 +64,12 @@ Requires plugin 'application' and 'mainClass' to be defined.
 ./gradlew run
 ```
 
+### Command Line Script (Install Distribution)
+
+```shell
+./gradlew installDist
+```
+
 ## Publishing Jar
 
 ```
@@ -74,8 +80,8 @@ plugins {
 publishing {
   publications {
     maven(MavenPublication) {
-      groupId = 'org.something'
-      artifactId = 'arti'
+      groupId = 'org.example'
+      artifactId = 'main'
       from components.java
     }
   }
@@ -86,4 +92,10 @@ publishing {
     }
   }
 } 
+```
+
+Then run with:
+
+```shell
+java -cp build/m2Repo/com/example/main/1.0.0/main-1.0.0.jar com.example.Main
 ```

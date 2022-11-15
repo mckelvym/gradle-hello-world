@@ -1,6 +1,7 @@
 plugins {
   id 'java'
   id 'application'
+  id 'maven-publish'
 }
 
 dependencies {
@@ -14,6 +15,24 @@ repositories {
 
 application {
   mainClass = 'com.example.Main'
+}
+
+// Maven publish
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      groupId = 'com.example'
+      artifactId = 'main'
+      from components.java
+    }
+  }
+
+  repositories {
+    maven {
+      url = "$rootProject.buildDir/m2Repo"
+    }
+  }
 }
 
 apply from: "archiving.gradle"
